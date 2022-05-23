@@ -2,16 +2,22 @@
 #include "./Fornecedor/Fornecedor.hpp"
 #include "./Agenda/Agenda.hpp"
 
+
+Agenda agenda;
+
 int main ()
 {
+
+	/*
   ContatoGeral contato;
   Cliente cliente;
   Fornecedor fornecedor;
 	Agenda agenda;
 
-
-	//agenda.Show();
-
+*/
+	agenda.Show();
+	
+ /*
 	
   contato.setNome ( " Gabi " );
 	contato.setTelefone ( " (51)99142-5152 " );
@@ -19,7 +25,7 @@ int main ()
 	contato.setDataAniversario ( " 15/11 " );
 	contato.setEmail ( " gabi.von@uniritter.edu.br " );
 
- /*
+
 	cliente.setNome ( " Gabriel " );
 	cliente.setTelefone ( " (51)93223-0989 " );
 	cliente.setEndereco ( " Viamão " );
@@ -35,13 +41,13 @@ int main ()
 	fornecedor.setEmail ( " geordani@uniritter.edu.br " );
 	fornecedor.setIndiceQualidade ( 8 );
 
-	*/
+	
 
 	cout << " \n\n Contato Geral: \n " ;
 	cout << contato.getNome () << " - " << contato.getDataAniversario () << " - " << contato.getEndereco () << " - " ;
 	cout << contato.getEmail () << " - " << contato.getTelefone () << endl;
 
-	/*
+	
 	cout << " \n\n Contato Cliente: \n " ;
 	cout << cliente.getNome () << " - "   << cliente.getDataAniversario () << " - " << cliente.getEndereco () << " - " ;
 	cout << cliente.getEmail () << " - " << cliente.getTelefone () << " - " << cliente.getDataCompra () << " - " ;

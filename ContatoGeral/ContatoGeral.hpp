@@ -7,6 +7,7 @@ using namespace std;
 class ContatoGeral
 {
   public:
+		void setID(int i);
 		void Cadastrar();
 		void Excluir();
 		void Listar();
@@ -21,7 +22,7 @@ class ContatoGeral
     string getTelefone();
     string getEndereco();
     string getDataAniversario();
-  
+		
   protected:
     vector <string> nome;
     vector <string> email;

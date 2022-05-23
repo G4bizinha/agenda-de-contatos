@@ -5,10 +5,14 @@
 Fornecedor fornecedor;
 Cliente cliente;
 
+void ContatoGeral::setID(int i){
+	
+}
+
   void ContatoGeral::setNome(string n)
 {
   nome.push_back(n);
-	//vetor[no].info
+	
 }
   void ContatoGeral::setEmail(string e)
 {
@@ -26,12 +30,9 @@ Cliente cliente;
 {
   dataAniversario.push_back(d);
 }
-  string ContatoGeral:: getNome()
+  string ContatoGeral::getNome()
 {
-	int id;
-	cout << "Qual o ID do contato?" << endl;
-	cin >> id;
-  return nome.at(0);
+	return nome;
 }
   string ContatoGeral::getEmail()
 {
@@ -84,7 +85,6 @@ void ContatoGeral::Cadastrar(){
 	cout << "1 - Fornecedor | 2 - Cliente \n";
 	cin >> op;
 
-	
 			switch(op){
 				case 1:
 					fornecedor.Cadastrar();
