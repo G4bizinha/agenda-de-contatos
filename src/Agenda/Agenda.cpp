@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-ContatoGeral contato[20];
+ContatoGeral contato;
 Fornecedor fornecedor;
 Cliente cliente;
 Data data;
@@ -22,7 +22,7 @@ int controleMenu = 1;
 	int op;
   
   do{
-    cout << color::yellown << " --- 📒AGENDA --- \n";
+    cout << color::yellown << "\n --- 📒AGENDA --- \n";
     cout << "Digite uma opção: \n";
     cout << "1.Cadastrar Contato🧍🏻 \n";
     cout << "2.Excluir Contato 🚶🏻\n";
@@ -45,7 +45,7 @@ int controleMenu = 1;
 						
 					case 1:
 						fornecedor.setID(PrimaryKey);
-            cout << color::cyan << "Por favor! Insira os dados nos campos abaixo." << color::off << endl;
+            cout << color::cyan << "Por favor! Insira os dados nos campos abaixo:" << color::off << endl;
 	          cout << "Digite qual o nome que você deseja inserir na lista:" << endl;
 	  				cin >> Nome;
 	  				fornecedor.setNome(Nome);
@@ -68,7 +68,7 @@ int controleMenu = 1;
 					break;
 						case 2:
 						cliente.setID(PrimaryKey);
-            cout << color::cyan << "Por favor! Insira os dados nos campos abaixo." << color::off << endl;
+            cout << color::cyan << "Por favor! Insira os dados nos campos abaixo:" << color::off << endl;
 	          cout << "Digite qual o nome que você deseja inserir na lista:" << endl;
 	  				cin >> Nome;
 	  				cliente.setNome(Nome);
@@ -90,7 +90,7 @@ int controleMenu = 1;
 							//}while(fidelidade != "Fiel" || "fiel" || (fidelidade != "Frequente" || "frequente") || (fidelidade != "Pouco Frequente" || 
 								//"pouco frequente") || (fidelidade != "Apenas Uma Vez" || "apenas uma vez"));
 								
-	  				cliente.setFidelidade(fidelidade);
+	  				cliente[PrimaryKey].setFidelidade(fidelidade);
 						cout << "Qual a data da ultima compra?" << endl;
 
 						data.CriarData();
@@ -105,6 +105,8 @@ int controleMenu = 1;
       break;
 				
       case 2:
+        cout << color::purple << "-------- Excluir Contato -------- \n" << color::off;
+        
        //contato.Excluir();
       break;
 
@@ -119,6 +121,8 @@ int controleMenu = 1;
 					{
 						case 1:
 							//fornecedor - exibir
+							cout << "Nome :" << contato.getNome();
+							
 							 
 							
 						break;
@@ -132,7 +136,7 @@ int controleMenu = 1;
 
       case 4:
 
-        cout << "-------- Editar Contato -------- \n";
+        cout << color::yellow << "-------- Editar Contato -------- \n" << color::off;
 				
 				cout << "Qual o id do contato que você deseja consultar ?";
 				cin >> i;

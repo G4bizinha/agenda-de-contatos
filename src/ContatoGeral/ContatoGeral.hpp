@@ -10,21 +10,22 @@ class ContatoGeral
 		void setID(int i);
     void setNome(string n);
     void setEmail(string e );
-    void setTelefone(string t;
+    void setTelefone(string t);
     void setEndereco(string e);
     void setDataAniversario(string d);
-    string getNome(int x);
-    string getEmail(int x);
-    string getTelefone(int x);
-    string getEndereco(int x);
-    string getDataAniversario(int x);
+    string getNome();
+    string getEmail();
+    string getTelefone();
+    string getEndereco();
+    string getDataAniversario();
 		
   protected:
-     string nome;
-     string email;
-     string telefone;
-     string endereco;
-     string dataAniversario;
-     int id;
+     string nome[10];
+     string email[10];
+     string telefone[10];
+     string endereco[10];
+     string dataAniversario[10];
+     int id[10];
 };
 #endif
+

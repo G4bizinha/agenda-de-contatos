@@ -3,7 +3,7 @@
 #include "../Cliente/Cliente.hpp"
 
 void ContatoGeral::setID(int i){
-	id.push_back(i);
+	id =i;
 }
 void ContatoGeral::setNome(string n){
   nome = n;	
@@ -18,20 +18,20 @@ void ContatoGeral::setEmail(string e){
   endereco = e;
 }
   void ContatoGeral::setDataAniversario(string d){
-  dataAniversario.push_back(d);
+  dataAniversario = d;
 }
-  string ContatoGeral::getNome(int x){
+  string ContatoGeral::getNome(){
 	return nome;
 }
-  string ContatoGeral::getEmail(int x){
+  string ContatoGeral::getEmail(){
   return email;
 }
-  string ContatoGeral::getTelefone(int x){
+  string ContatoGeral::getTelefone(){
   return telefone;
 }
-  string ContatoGeral::getEndereco(int x){
+  string ContatoGeral::getEndereco(){
   return endereco;
 }
-  string ContatoGeral::getDataAniversario(int x){
+  string ContatoGeral::getDataAniversario(){
   return dataAniversario;
 }

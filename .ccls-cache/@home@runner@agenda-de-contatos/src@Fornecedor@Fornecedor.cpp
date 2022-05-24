@@ -9,9 +9,3 @@
   return indiceQualidade;
 }
 
-void Fornecedor::Cadastrar(){
-	int indiceQualidade;
-  cout << "Qual o indice de qualidade ?" << endl;
-	cin >> indiceQualidade;
-	this->indiceQualidade = indiceQualidade;
-}
