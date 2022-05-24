@@ -3,16 +3,18 @@
 #include "../Fornecedor/Fornecedor.hpp"
 #include "../Cliente/Cliente.hpp"
 #include "../Data/Data.hpp"
+#include "../Cores.hpp"
 #include <iostream>
 using namespace std;
 
-ContatoGeral contato;
+ContatoGeral contato[20];
 Fornecedor fornecedor;
 Cliente cliente;
 Data data;
 int controleMenu = 1;
-	string Nome, Email, telefone, dataAniversario , fidelidade, ultimaDataCompra, auxUltimaDataCompra;
-	int PrimaryKey=1 , opcSalvar;
+	string Nome, Email, telefone, dataAniversario , 
+	fidelidade, ultimaDataCompra, auxUltimaDataCompra;
+	int PrimaryKey=0 , opcSalvar;
 	int indcQualidade, i;
 
   void Agenda::Show(){
@@ -20,21 +22,22 @@ int controleMenu = 1;
 	int op;
   
   do{
-    cout << " --- AGENDA ---\n";
+    cout << color::yellown << " --- 📒AGENDA --- \n";
     cout << "Digite uma opção: \n";
-    cout << "1.Cadastrar Contato \n";
-    cout << "2.Excluir Contato \n";
-    cout << "3.Listar Contatos por Tipo/Categoria \n"; 
-    cout << "4.Consulta/Edição de Dados em um Contato \n";
-    cout << "0.Sair \n";
+    cout << "1.Cadastrar Contato🧍🏻 \n";
+    cout << "2.Excluir Contato 🚶🏻\n";
+    cout << "3.Listar Contatos por Tipo/Categoria📑 \n"; 
+    cout << "4.Consulta/Edição de Dados em um Contato📝 \n";
+    cout << "0.Sair \n" << color::off;
     cin >> op;
 		
 
     switch (op) {
         
 		  case 1:
-
-				cout << "Você deseja salvar esse contato como: \n 1 - Fornecedor | 2 - Cliente " << endl;
+         cout << color::blue << " --- Cadastrar Contato🧍🏻 --- \n" << color::off;
+				cout << "Você deseja salvar esse contato como: \n" << color::green << "1 - Fornecedor🧑🏻‍💼" 
+					<< color::off << "|" << color::cyan << "2 - Cliente🧑🏻" << color::off << endl;
         cin >> opcSalvar; 
 				
 					switch(opcSalvar){
@@ -42,43 +45,46 @@ int controleMenu = 1;
 						
 					case 1:
 						fornecedor.setID(PrimaryKey);
-	          cout << "Qual o nome que você deseja inserir na lista ?" << endl;
+            cout << color::cyan << "Por favor! Insira os dados nos campos abaixo." << color::off << endl;
+	          cout << "Digite qual o nome que você deseja inserir na lista:" << endl;
 	  				cin >> Nome;
 	  				fornecedor.setNome(Nome);
-	  				cout << "Digite um Email" << endl;
+	  				cout << "Digite o e-mail📧:" << endl;
 	  				cin >> Email;
 	  				fornecedor.setEmail(Email);
-	  				cout << "Telefone:" << endl;
+	  				cout << "Digite o telefone📱:" << endl;
 	  				cin >> telefone;
 	  				fornecedor.setTelefone(telefone);
-	  				cout << "Data de Aniversario:" << endl;
+	  				cout << "Digite a data de aniversário🥳:" << endl;
 	  				cin >> dataAniversario;
 	  				fornecedor.setDataAniversario(dataAniversario);
-						cout << "Qual o indice de qualidade desse Fornecedor:" << endl;
+						cout << "Digite qual o índice de qualidade desse Fornecedor:" << endl;
 	  				cin >> indcQualidade;
 						fornecedor.setIndiceQualidade(indcQualidade);
+
+              cout << color::green << "FORNECEDOR CADASTRADO COM SUCESSO🎉!" << color::off << endl;
 						PrimaryKey++;
 				
 					break;
 						case 2:
 						cliente.setID(PrimaryKey);
-	          cout << "Qual o nome que você deseja inserir na lista ?" << endl;
+            cout << color::cyan << "Por favor! Insira os dados nos campos abaixo." << color::off << endl;
+	          cout << "Digite qual o nome que você deseja inserir na lista:" << endl;
 	  				cin >> Nome;
 	  				cliente.setNome(Nome);
-	  				cout << "Digite um Email" << endl;
+	  				cout << "Digite o e-mail📧:" << endl;
 	  				cin >> Email;
 	  				cliente.setEmail(Email);
-	  				cout << "Telefone:" << endl;
+	  				cout << "Digite o telefone📱:" << endl;
 	  				cin >> telefone;
 	  				cliente.setTelefone(telefone);
-	  				cout << "Data de Aniversario:" << endl;
+	  				cout << "Digite a data de aniversário🥳:" << endl;
 	  				cin >> dataAniversario;
 	  				cliente.setDataAniversario(dataAniversario);
 					
-							
-             // do{
-								cout << "Qual a fidelidade desse Cliente? " << endl;
-            		cout << "Fiel | Frequente | Pouco Frequente | Apenas Uma Vez \n";
+            // do{
+								cout << color::blue << "Qual a fidelidade desse Cliente? " << endl;
+            		cout << "Fiel | Frequente | Pouco Frequente | Apenas Uma Vez \n" << color::off;
                 cin >> fidelidade;
 								
 							//}while(fidelidade != "Fiel" || "fiel" || (fidelidade != "Frequente" || "frequente") || (fidelidade != "Pouco Frequente" || 
@@ -89,7 +95,8 @@ int controleMenu = 1;
 
 						data.CriarData();
 	  				cliente.setDataCompra(data.get_dataFormatada());
-						
+
+              cout << color::green << "CLIENTE CADASTRADO COM SUCESSO🎉!" << color::off << endl;
 						PrimaryKey++;
 							
 						break;
@@ -102,7 +109,7 @@ int controleMenu = 1;
       break;
 
       case 3:
-       	cout << " -------- Agenda de contatos -------- \n";
+       	cout << color::blue << " -------- Listar Contatos -------- \n" << color::;
 				cout << "qual o tipo de contato você deseja procurar:" << endl;
 				cout << "1 - Fornecedor | 2 - Cliente" << endl;
 				
@@ -111,22 +118,21 @@ int controleMenu = 1;
 				switch(i)
 					{
 						case 1:
-							//fornecedor
-							 std::cout << "v = { ";
-    						for (int n : fornecedor.getNome(n)) {
-        				std::cout << n << ", ";
-    					}
-   					 std::cout << "}; \n";
+							//fornecedor - exibir
+							 
 							
 						break;
 						case 2:
-							//cliente
+							//cliente - exibir
+
+							
 						break;
 					}
       break;
 
       case 4:
-  
+
+        cout << "-------- Editar Contato -------- \n";
 				
 				cout << "Qual o id do contato que você deseja consultar ?";
 				cin >> i;
@@ -139,7 +145,7 @@ int controleMenu = 1;
       break;
 
       default:
-        cout<< "ERRO! Opção inválida, digite de novo \n";
+        cout<< color::red <<"ERRO❗ Opção inválida❌, digite de novo \n" << color::off;
     }//switch
 		}while(controleMenu == 1);
 	
