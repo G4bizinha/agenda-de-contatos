@@ -3,19 +3,16 @@
 #include "./Agenda/Agenda.hpp"
 
 
+
 Agenda agenda;
 
 int main ()
 {
-
-	/*
-  ContatoGeral contato;
-  Cliente cliente;
-  Fornecedor fornecedor;
-	Agenda agenda;
-
-*/
+	int controleMenu =1;
+do{
 	agenda.Show();
+}while(controleMenu==1);
+	
 	
  /*
 	

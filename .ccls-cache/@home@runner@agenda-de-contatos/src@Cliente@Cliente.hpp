@@ -1,4 +1,4 @@
-#include "../ContatoGeral.hpp"
+#include "../ContatoGeral/ContatoGeral.hpp"
 
 class Cliente: public ContatoGeral
 {

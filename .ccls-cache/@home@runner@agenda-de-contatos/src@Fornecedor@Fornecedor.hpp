@@ -1,4 +1,4 @@
-#include "../ContatoGeral.hpp"
+#include "../ContatoGeral/ContatoGeral.hpp"
 
 
 class Fornecedor: public ContatoGeral

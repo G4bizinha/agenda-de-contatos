@@ -1,19 +1,24 @@
 #include "Agenda.hpp"
-#include "../ContatoGeral.hpp"
+#include "../ContatoGeral/ContatoGeral.hpp"
 #include "../Fornecedor/Fornecedor.hpp"
 #include "../Cliente/Cliente.hpp"
+#include "../Data/Data.hpp"
 #include <iostream>
 using namespace std;
 
 ContatoGeral contato;
 Fornecedor fornecedor;
 Cliente cliente;
+Data data;
+int controleMenu = 1;
+	string Nome, Email, telefone, dataAniversario , fidelidade, ultimaDataCompra, auxUltimaDataCompra;
+	int PrimaryKey=1 , opcSalvar;
+	int indcQualidade, i;
 
-
-void Agenda::Show(){
+  void Agenda::Show(){
 
 	int op;
-
+  
   do{
     cout << " --- AGENDA ---\n";
     cout << "Digite uma opção: \n";
@@ -24,13 +29,7 @@ void Agenda::Show(){
     cout << "0.Sair \n";
     cin >> op;
 		
-  }while(op != 0);
 
-	string Nome, Email, telefone, dataAniversario , fidelidade, ultimaDataCompra, auxUltimaDataCompra;
-	int PrimaryKey=1 , opcSalvar;
-	int indcQualidade;
-
-	
     switch (op) {
         
 		  case 1:
@@ -40,21 +39,21 @@ void Agenda::Show(){
 				
 					switch(opcSalvar){
 					int indcQualidade;
-					case 1:
 						
-						contato.setID(PrimaryKey);
+					case 1:
+						fornecedor.setID(PrimaryKey);
 	          cout << "Qual o nome que você deseja inserir na lista ?" << endl;
 	  				cin >> Nome;
 	  				fornecedor.setNome(Nome);
 	  				cout << "Digite um Email" << endl;
 	  				cin >> Email;
-	  				contato.setEmail(Email);
+	  				fornecedor.setEmail(Email);
 	  				cout << "Telefone:" << endl;
 	  				cin >> telefone;
-	  				contato.setTelefone(telefone);
+	  				fornecedor.setTelefone(telefone);
 	  				cout << "Data de Aniversario:" << endl;
 	  				cin >> dataAniversario;
-	  				contato.setDataAniversario(dataAniversario);
+	  				fornecedor.setDataAniversario(dataAniversario);
 						cout << "Qual o indice de qualidade desse Fornecedor:" << endl;
 	  				cin >> indcQualidade;
 						fornecedor.setIndiceQualidade(indcQualidade);
@@ -62,66 +61,75 @@ void Agenda::Show(){
 				
 					break;
 						case 2:
-						contato.setID(PrimaryKey);
+						cliente.setID(PrimaryKey);
 	          cout << "Qual o nome que você deseja inserir na lista ?" << endl;
 	  				cin >> Nome;
-	  				contato.setNome(Nome);
+	  				cliente.setNome(Nome);
 	  				cout << "Digite um Email" << endl;
 	  				cin >> Email;
-	  				contato.setEmail(Email);
+	  				cliente.setEmail(Email);
 	  				cout << "Telefone:" << endl;
 	  				cin >> telefone;
-	  				contato.setTelefone(telefone);
+	  				cliente.setTelefone(telefone);
 	  				cout << "Data de Aniversario:" << endl;
 	  				cin >> dataAniversario;
-	  				contato.setDataAniversario(dataAniversario);
-						cout << "Data de Aniversario:" << endl;
-	  				cin >> dataAniversario;
 	  				cliente.setDataAniversario(dataAniversario);
-							do{
-								cout << "Qual a fidelidade desse Cliente?" << endl;
-            		cout << "Fiel" << "Frequente" << "Pouco Frequente" << "Apenas Uma Vez";
+					
+							
+             // do{
+								cout << "Qual a fidelidade desse Cliente? " << endl;
+            		cout << "Fiel | Frequente | Pouco Frequente | Apenas Uma Vez \n";
                 cin >> fidelidade;
 								
-							}while(fidelidade != "Fiel" || "fiel" && (fidelidade != "Frequente" || "frequente") && (fidelidade != "Pouco Frequente" || 
-								"pouco frequente") && (fidelidade != "Apenas Uma Vez" || "apenas uma vez"));
+							//}while(fidelidade != "Fiel" || "fiel" || (fidelidade != "Frequente" || "frequente") || (fidelidade != "Pouco Frequente" || 
+								//"pouco frequente") || (fidelidade != "Apenas Uma Vez" || "apenas uma vez"));
 								
 	  				cliente.setFidelidade(fidelidade);
 						cout << "Qual a data da ultima compra?" << endl;
 
-							
-							
-							
-							
-	  				cliente.setDataCompra(ultimaDataCompra);
+						data.CriarData();
+	  				cliente.setDataCompra(data.get_dataFormatada());
 						
 						PrimaryKey++;
 							
 						break;
 				}
 					
-				
       break;
 				
       case 2:
-       contato.Excluir();
+       //contato.Excluir();
       break;
 
       case 3:
-       	contato.Listar();
+       	cout << " -------- Agenda de contatos -------- \n";
+				cout << "qual o tipo de contato você deseja procurar:" << endl;
+				cout << "1 - Fornecedor | 2 - Cliente" << endl;
+				
+				cin >> i;
+
+				switch(i)
+					{
+						case 1:
+							//fornecedor
+							 std::cout << "v = { ";
+    						for (int n : fornecedor.getNome(n)) {
+        				std::cout << n << ", ";
+    					}
+   					 std::cout << "}; \n";
+							
+						break;
+						case 2:
+							//cliente
+						break;
+					}
       break;
 
       case 4:
   
-				int i;
+				
 				cout << "Qual o id do contato que você deseja consultar ?";
 				cin >> i;
-
-				
-
-				
-				
-
 
 				
       break;
@@ -133,5 +141,6 @@ void Agenda::Show(){
       default:
         cout<< "ERRO! Opção inválida, digite de novo \n";
     }//switch
+		}while(controleMenu == 1);
 	
 }

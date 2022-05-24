@@ -1,5 +1,5 @@
 #include "Data.hpp"
-#include "../color.hpp"
+#include "../Cores.hpp"
 using namespace std;
 
 int d, m, a;
