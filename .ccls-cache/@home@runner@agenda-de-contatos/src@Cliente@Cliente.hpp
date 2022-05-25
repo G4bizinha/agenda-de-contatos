@@ -1,5 +1,5 @@
 #include "../ContatoGeral/ContatoGeral.hpp"
-
+#include <vector>
 class Cliente: public ContatoGeral
 {
   public:
@@ -10,6 +10,6 @@ class Cliente: public ContatoGeral
     string getFidelidade();
   
   private:
-    string dataCompra;
-    string fidelidade;
+   	vector <string> dataCompra;
+    vector <string> fidelidade;
 };

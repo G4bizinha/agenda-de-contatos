@@ -1,4 +1,5 @@
 #include "../ContatoGeral/ContatoGeral.hpp"
+#include <vector>
 class Fornecedor: public ContatoGeral
 {
   public:
@@ -6,5 +7,5 @@ class Fornecedor: public ContatoGeral
     void setIndiceQualidade(int i);
     int getIndiceQualidade();
   private:
-   int indiceQualidade;
+   vector <int> indiceQualidade;
 };

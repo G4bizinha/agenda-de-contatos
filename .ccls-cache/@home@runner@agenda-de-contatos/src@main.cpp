@@ -3,19 +3,19 @@
 #include "./Agenda/Agenda.hpp"
 
 
-
-Agenda agenda;
-
-int main ()
-{
-	int controleMenu =1;
-do{
-	agenda.Show();
-}while(controleMenu==1);
+  Agenda agenda;
 	
+  
+    int main ()
+  {
+    	int controleMenu =1;
+    do{
+    	agenda.Show();
+    }while(controleMenu==1);
+  	
 	
- /*
-	
+ 
+	/*
   contato.setNome ( " Gabi " );
 	contato.setTelefone ( " (51)99142-5152 " );
 	contato.setEndereco ( " Viamão " );

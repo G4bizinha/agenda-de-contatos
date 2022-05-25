@@ -13,19 +13,20 @@ class ContatoGeral
     void setTelefone(string t);
     void setEndereco(string e);
     void setDataAniversario(string d);
-    string getNome();
-    string getEmail();
-    string getTelefone();
-    string getEndereco();
-    string getDataAniversario();
+    void getNome();
+    void getEmail();
+    void getTelefone();
+    void getEndereco();
+    void getDataAniversario();
+		void apagarContato(int i);
 		
   protected:
-     string nome[10];
-     string email[10];
-     string telefone[10];
-     string endereco[10];
-     string dataAniversario[10];
-     int id[10];
+     vector <string> nome;
+     vector <string> email;
+     vector <string> telefone;
+     vector <string> endereco;
+     vector <string> dataAniversario;
+     vector <int> id;
 };
 #endif
 

@@ -1,21 +1,26 @@
 #include "Cliente.hpp"
 
-void Cliente::setDataCompra(string c)
-{
-  dataCompra = c;
+void Cliente::setDataCompra(string c){
+  
+  dataCompra.push_back(c);
+
 }
 
-void Cliente::setFidelidade(string f)
-{
-  fidelidade = f;
+void Cliente::setFidelidade(string f){
+  
+  fidelidade.push_back(f);
+
 }
     
-string Cliente::getDataCompra()
-{
-  return dataCompra;
+string Cliente::getDataCompra(){
+  
+  for(auto it = dataCompra.begin(); it!= dataCompra.end(); ++it)
+			cout << " " << *it;
+  
 }
 string Cliente::getFidelidade()
 {
-  return fidelidade;
+  for(auto it = fidelidade.begin(); it!= fidelidade.end(); ++it)
+			cout << " " << *it;
 }
 
