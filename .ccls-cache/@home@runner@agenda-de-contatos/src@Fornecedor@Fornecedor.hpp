@@ -5,7 +5,7 @@ class Fornecedor: public ContatoGeral
   public:
 		void Cadastrar();
     void setIndiceQualidade(int i);
-    int getIndiceQualidade();
+    void getIndiceQualidade();
   private:
    vector <int> indiceQualidade;
 };

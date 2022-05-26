@@ -12,13 +12,13 @@ void Cliente::setFidelidade(string f){
 
 }
     
-string Cliente::getDataCompra(){
+void Cliente::getDataCompra(){
   
   for(auto it = dataCompra.begin(); it!= dataCompra.end(); ++it)
 			cout << " " << *it;
   
 }
-string Cliente::getFidelidade()
+void Cliente::getFidelidade()
 {
   for(auto it = fidelidade.begin(); it!= fidelidade.end(); ++it)
 			cout << " " << *it;

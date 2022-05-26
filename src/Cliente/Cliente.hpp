@@ -6,8 +6,8 @@ class Cliente: public ContatoGeral
 		void Cadastrar();
     void setDataCompra(string c);
     void setFidelidade(string f);
-    string getDataCompra();
-    string getFidelidade();
+    void getDataCompra();
+    void getFidelidade();
   
   private:
    	vector <string> dataCompra;

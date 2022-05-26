@@ -1,6 +1,8 @@
 #include "ContatoGeral.hpp"
 #include "../Fornecedor/Fornecedor.hpp"
 #include "../Cliente/Cliente.hpp"
+#include <vector>
+#include <iostream>
 
 void ContatoGeral::setID(int i){
 	id.push_back(i);
@@ -47,7 +49,12 @@ void ContatoGeral::setEmail(string e){
 
 void ContatoGeral::apagarContato(int i){
 	nome[i].erase();
+
+	//erase(nome[i] , nome[i]);
+	//erase();
+		
 	telefone[i].erase();
 	endereco[i].erase();
-	
+	dataAniversario[i].erase();
+	email[i].erase();
 }
